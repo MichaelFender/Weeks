@@ -5,6 +5,10 @@
 */
 
 //Code here
+const me = {
+  'name': 'Michael',
+  'age': 44,
+ };
 
 
 
@@ -16,13 +20,19 @@
 //and goodBoy/goodGirl (a boolean).
 
 //Code here
-
+const dog = {
+  'name': 'Duke',
+  'color': 'Black',
+  'age': 9,
+  'goodBoy': true
+}
 
 
 //////////////////////////// PROBLEM 3 ////////////////////////////
 /* Print out the name of the dog you created in problem 2 using dot-notation. */
 
 //Code here
+console.log(dog.name)
 
 
 
@@ -30,7 +40,7 @@
 /* Print out the color of the dog you created in problem 2 using bracket-notation. */
 
 //Code here
-
+console.log(dog['color'])
 
 
 //////////////////////////// PROBLEM 5 ////////////////////////////
@@ -40,6 +50,15 @@
 */
 
 //Code here
+const favoriteThings = {
+  'band': 'Metallica',
+  'food': 'Pizza',
+  'person': 'Kay',
+  'book': 'Who Cares',
+  'movie': 'Up In Smoke',
+  'holiday': 'Halloween'
+}
+
 
 
 /*
@@ -47,7 +66,8 @@
 */
 
 //Code here
-
+favoriteThings.car = 'Tesla';
+favoriteThings.show = 'Friends';
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
@@ -55,7 +75,7 @@
 */
 
 //Code here
-
+favoriteThings.book = 'Harry Potter';
 
 //////////////////////////// PROBLEM 6 ////////////////////////////
 
@@ -73,6 +93,7 @@ var carDetails = {
 */
 
 //Code Here
+let {color: newColor, make: newMake, model:newModel, year: newYear} = carDetails
 
 
 
@@ -84,14 +105,17 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
+function greeting(obj) {
   //Code Here
+    let {firstName, lastName, title} = obj
+
+
+
   
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
 }
-
 
 
 //////////////////////////// PROBLEM 8 ////////////////////////////
@@ -105,6 +129,11 @@ function greeting( obj ) {
 */
 
 //Code Here
+function totalPopulation(obj) {
+  const {utah, california, texas, arizona} = obj;
+  sum = utah + california + texas + arizona;
+  console.log(sum);
+}
 
 
 
@@ -119,6 +148,13 @@ function greeting( obj ) {
 */
 
 //Code Here
+function ingredients(obj){
+  let arr = []
+  const {carb, fat, protein} = obj;
+  arr.push(carb, fat, protein);
+  return arr;
+}
+console.log (ingredients({carb: 'low', fat: 'low', protein: 'high'}))
 
 
 
@@ -141,7 +177,8 @@ var user = {
 */
 
 //Code Here
-
+user.name = 'Bryan G. Smith';
+user.email = 'bryan.smith@devmounta.in';
 
 //////////////////////////// PROBLEM 11 ////////////////////////////
 /*
@@ -149,7 +186,7 @@ var user = {
 */
 
 //Code Here
-
+delete user.age
 
 //////////////////////////// PROBLEM 12 ////////////////////////////
 /*
@@ -159,8 +196,16 @@ var user = {
 */
 
 //Code here
+class Cat {
+  constructor(name, age, color){
+    this.name = name;
+    this.age = age;
+    this.color = color;
+  }
+}
 
-
+let cat1 = new Cat('Roxie', 4, 'black&white')
+console.log(cat1);
 
 //////////////////////////// PROBLEM 13 ////////////////////////////
 /*
@@ -171,6 +216,18 @@ var user = {
 */
 
 //Code here
+class Wizard {
+  constructor(name, age, favoriteSpell){
+    this.name = name;
+    this.age = age;
+    this.favoriteSpell = favoriteSpell;
+  }
+  castSpell(){
+    console.log(`${this.name} has cast ${this.favoriteSpell}`);
+  }
+}
+let myWiz = new Wizard('Mookie', 200, 'BooBoo')
+myWiz.castSpell();
 
 //////////////////////////// PROBLEM 14 ////////////////////////////
 /*
@@ -197,6 +254,19 @@ var user = {
 
 //Code Here
 
+class Phone {
+  constructor(brand, model, storage, color, price, sold){
+    this.brand = brand;
+    this.model = model;
+    this.storage = storage;
+    this.color = color;
+    this.price = price;
+    this.sold = false
+  }
+  sell(){
+    this.sold = true
+    console.log(`${brand} ${model} has been sold`);
+}
   
 /*
     Next make three new phone instances using your class.
@@ -209,6 +279,8 @@ var user = {
 */
 
 //Code Here
+let myPhone = new Phone('Motorolla', 'Razr', 5150, 'Baby Red', 1000)
+myPhone.sell();
 
 /* 
   Call the changePrice function on one of your phones, 

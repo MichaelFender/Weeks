@@ -6,7 +6,7 @@ const dog = {
     'color': 'brown/black',
     'hunger': 40,
     'mood': 'feisty',
-    'age': 9,
+    'age': 9
   };
 
 //NOT STRINGS
