@@ -1,46 +1,67 @@
-////////////////// PROBLEM 1 ////////////////////
-/*
-  Create a function called helloWorld which simply console logs 'Hello, World!'
-  Call the function.
-*/
+// ////////////////// PROBLEM 1 ////////////////////
+// /*
+//   Create a function called helloWorld which simply console logs 'Hello, World!'
+//   Call the function.
+// */
 
-//CODE HERE
+// //CODE HERE
+// function helloWorld(statement){
+//   console.log(statement)
+// } 
+// helloWorld('Hello World')
+// ///////////////// PROBLEM 2 ////////////////////
+// /*
+//   Create a function called printName which takes in a person's name and console logs it.
+//   Ex. If 'Cameron' were passed in as the argument, Cameron would be console logged.
+//   Call the function, passing in an argument.
+// */
 
-
-////////////////// PROBLEM 2 ////////////////////
-/*
-  Create a function called printName which takes in a person's name and console logs it.
-  Ex. If 'Cameron' were passed in as the argument, Cameron would be console logged.
-  Call the function, passing in an argument.
-*/
-
-//CODE HERE
-
-
-////////////////// PROBLEM 3 ////////////////////
-/*
-  Create a function called greeting that
-  accepts name as its only parameter.
-  Convert the name param into a string.
-  greeting should log the string 'Hello, '
-  plus the value of the name parameter.
-  Ex. If Jake were passed in as the argument, the function would log 'Hello, Jake'
-  Make sure to call your function and pass in an argument.
-*/
-
-//CODE HERE
+// //CODE HERE
+function printName(firstName){
+  console.log(firstName)
+}
+printName('Cameron')
 
 
-////////////////// PROBLEM 4 ////////////////////
-/*
-  Create a function called add that takes in two parameters 
-  Inside, convert the arguments to be numbers (just in case strings get sent in)
-  The add function should RETURN the two parameters added together.
-  Create a variable outside the function called 'sum' and set it equal to add invoked (called), passing in 2 arguments.
-*/
+// ////////////////// PROBLEM 3 ////////////////////
+// /*
+//   Create a function called greeting that
+//   accepts name as its only parameter.
+//   Convert the name param into a string.
+//   greeting should log the string 'Hello, '
+//   plus the value of the name parameter.
+//   Ex. If Jake were passed in as the argument, the function would log 'Hello, Jake'
+//   Make sure to call your function and pass in an argument.
+// */
 
-//CODE HERE
+// //CODE HERE
+function greeting(name1){
+  console.log ("Hello, " + name1) 
+}
+  greeting('Jake')
+  
 
+
+
+
+
+// ////////////////// PROBLEM 4 ////////////////////
+// /*
+//   Create a function called add that takes in two parameters 
+//   Inside, convert the arguments to be numbers (just in case strings get sent in)
+//   The add function should RETURN the two parameters added together.
+//   Create a variable outside the function called 'sum' and set it equal to add invoked (called), passing in 2 arguments.
+// */
+
+// //CODE HERE
+
+function add(a, b) {
+  a = Number(a)
+  b = Number(b)
+  return a + b
+}
+let sum = add(1,2)
+console.log(sum)
 
 ////////////////// PROBLEM 5 ////////////////////
 /*
@@ -52,6 +73,18 @@
 */
 
 //CODE HERE
+function nameCheck(name){
+  if (name === 'Steven'){
+    return "What is up Steven?"
+  }
+  if (name === 'Bryan'){
+    return "Hey Bryan"
+  }
+  let NAMEPARAM = (name)
+  return ('Cool name, ' + NAMEPARAM)
+}
+let nameGreeting = (nameCheck('Peter'))
+console.log(nameGreeting)
 
 
 ////////////////// PROBLEM 6 ////////////////////
@@ -65,7 +98,21 @@
 */
 
 //CODE HERE
+function faveColorFinder(color){
+  if (color === 'red'){
+  return "red is a great color"
+}
+if (color === 'green'){
+  return "green is a solid favorite color"
+}
+if (color === 'black'){
+  return "so trendy"
+}
+return ("You need to evaluate your favorite color choice")
+}
 
+let colorRating = (faveColorFinder('orange'))
+console.log(colorRating)
 
 ////////////////// PROBLEM 7 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
@@ -76,6 +123,11 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+function printAllNames(namesArr){
+for (i = 0; i < namesArr.length; i++) 
+console.log(namesArr[i])
+}
+let listOfNames = (printAllNames(namesArr))
 
 
 ////////////////// PROBLEM 8 ////////////////////
@@ -87,6 +139,14 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+function thatsOdd(number){
+  if (number % 2 === 0){
+    return "That's not odd"
+  } 
+  return "That is odd indeed"
+}
+let oddChecker = thatsOdd(53)
+console.log(oddChecker)
 
 
 ////////////////// PROBLEM 9 ////////////////////
@@ -101,17 +161,40 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
+function bigOrSmall(arr) {
+  const answers = [];
+  for(let i = 0; i < arr.length; i++) {
+    if (arr[i] <= 100) {
+      answers.push('small');
+    } else {
+      answers.push('big');
+    }
+  }
+  return answers
+}
+console.log(bigOrSmall(bigOrSmallArray))
 
 
 ////////////////// PROBLEM 10 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
 let loser = 'Glimmer'
+
 /*
   Write a function that is called theEliminator, which takes in two arguments, contestants (which will each be an array of strings), and loser (which will be a string).
   The function should loop over the array of contestant names. If the loser string appears in the array, splice it out. Return the new contestants array.
 */
 
 //CODE HERE
+console.log(contestants)
+function theEliminator(contestants,loser){
+  for (let i = 0; i < contestants.length; i++)
+    if (contestants[i] == (loser){
+    contestants.splice(i, 1)
+    
+console.log(conte)
+}
+
+
 
 
 ////////////////// PROBLEM 11 ////////////////////
@@ -159,6 +242,8 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 */
 
 //CODE HERE
+
+function 
 
 
 ////////////////// PROBLEM 16 ////////////////////
