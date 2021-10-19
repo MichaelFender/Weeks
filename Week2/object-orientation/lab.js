@@ -255,7 +255,7 @@ myWiz.castSpell();
 //Code Here
 
 class Phone {
-  constructor(brand, model, storage, color, price, sold){
+  constructor(brand, model, storage, color, price,){
     this.brand = brand;
     this.model = model;
     this.storage = storage;
@@ -265,7 +265,11 @@ class Phone {
   }
   sell(){
     this.sold = true
-    console.log(`${brand} ${model} has been sold`);
+    console.log(`${this.brand} ${this.model} has been sold`);
+}
+}
+changePrice(newPrice){
+  this.price = newPrice
 }
   
 /*
@@ -280,6 +284,8 @@ class Phone {
 
 //Code Here
 let myPhone = new Phone('Motorolla', 'Razr', 5150, 'Baby Red', 1000)
+//add more!!!
+//let myPhone1 = new Phone
 myPhone.sell();
 
 /* 
@@ -290,6 +296,8 @@ myPhone.sell();
 */ 
 
 //Code Here 
+Phone.changePrice(10000);
+console.log(Phone.price);
 
 
 /*
@@ -299,7 +307,8 @@ myPhone.sell();
 */
 
 //Code Here 
-
+Phone.sell();
+console.log(Phone.sold);
 
 //////////////////////////// PROBLEM 15 ////////////////////////////
 
