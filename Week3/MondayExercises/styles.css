@@ -1,0 +1,54 @@
+* {
+    font-family:'Times New Roman';
+    margin: 10px;
+    
+}
+
+h1 {
+    background-color: rgb(95, 3, 182);
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    margin: 5;
+    text-align: left;
+}
+
+p {
+    text-align: left;
+}
+
+p{
+    margin: 10px 10px;
+}
+h1 > p > span {
+    font-size: 24px;
+    margin: 0px 0px;
+    text-align: center;
+}
+
+h2 {
+    width: 500px;
+    text-align: center;
+}
+
+img {
+    height: 225px;
+    margin: 20px;
+    border: rgb(229, 255, 0) solid 5px;
+
+}
+
+input {
+    border: none;
+    background-color: rgb(4, 0, 255);
+    color:rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 24px
+}
+
+div {
+    width: 500px
+}
+
+form {
+    text-align: center
+}
