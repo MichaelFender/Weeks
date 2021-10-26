@@ -2,3 +2,25 @@ div {
     background-color: rgb(255, 255, 255);
     border: 3.5px solid rgb(0, 0, 0) ;
 }
+
+.rect1 {
+    height: 150px;
+    width: 50px;
+    background-color: rgb(138, 1, 131);
+    display: inline-block;
+}
+
+.rect2 {
+    height: 200px;
+    width: 500px;
+    background-color: rgb(14, 167, 0);
+    display: inline-block;
+}
+
+.dot {
+    height: 200px;
+    width: 200px;
+    background-color: rgb(94, 184, 236);
+    border-radius: 50%;
+    display: inline-block;
+}
