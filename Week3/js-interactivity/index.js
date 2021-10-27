@@ -1,6 +1,6 @@
 let addMovie = (event) => {
 
-    event.preventDefalt();
+    event.preventDefault();
     
     let inputField = document.querySelector("input"); 
 
@@ -12,11 +12,16 @@ let addMovie = (event) => {
 
     movie.appendChild(movieTitle);
 
+    let deleteBtn = document.createElement("button");
+
     let list = document.querySelector('ul');
 
     list.appendChild(movie);
 
-    inputField.value = '';
+    inputField.value = "";
+
+
+
 };
 
 let form = document.querySelector("form");
