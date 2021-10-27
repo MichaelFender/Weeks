@@ -39,3 +39,9 @@ let deleteMovie = (event) => {
     event.target.parentNode.remove()
 }
 
+let crossOffMovie = (event) => {
+
+    
+
+}
+
