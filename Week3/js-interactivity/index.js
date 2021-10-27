@@ -5,7 +5,9 @@ let addMovie = (event) => {
 
     let movieTitle = document.createElement('span');
 
-    movieTitle.textContent= inputField.value;
+    movieTitle.textContent = inputField.value;
+
+    movie.appendChild(movieTitle);
 
 };
 
