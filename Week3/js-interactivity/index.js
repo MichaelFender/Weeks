@@ -1,3 +1,5 @@
+let message = document.querySelector("#message")
+
 let addMovie = (event) => {
 
     event.preventDefault();
