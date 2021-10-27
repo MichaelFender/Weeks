@@ -16,6 +16,8 @@ let addMovie = (event) => {
 
     deleteBtn.textContent = "x";
 
+    deleteBtn.addEventListener("click", deleteMovie);
+
     let list = document.querySelector('ul');
 
     list.appendChild(movie);
