@@ -48,7 +48,13 @@ let deleteMovie = (event) => {
 
 let crossOffMovie = (event) => {
 
-    event.target.classList.toggle(checked);
+    event.target.classList.toggle("checked");
+
+    if (event.target.classList.contains("checked")){
+
+    }else{
+
+}
 
 };
 
