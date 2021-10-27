@@ -41,6 +41,9 @@ form.addEventListener("submit", addMovie);
 let deleteMovie = (event) => {
 
     event.target.parentNode.remove();
+
+    message.textContent = 'Movie Deleted';
+
 };
 
 let crossOffMovie = (event) => {
