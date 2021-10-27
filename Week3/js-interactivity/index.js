@@ -1,1 +1,4 @@
-console.log('hello world');
+let addMovie = (event) => {
+    let inputField = document.querySelector("input")
+    
+}
