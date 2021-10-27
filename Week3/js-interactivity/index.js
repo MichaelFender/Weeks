@@ -41,7 +41,7 @@ let deleteMovie = (event) => {
 
 let crossOffMovie = (event) => {
 
-    
+    event.target.classList.toggle(checked);
 
-}
+};
 
