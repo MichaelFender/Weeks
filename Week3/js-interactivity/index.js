@@ -9,5 +9,9 @@ let addMovie = (event) => {
 
     movie.appendChild(movieTitle);
 
+    let list = document.querySelector('ul');
+
+    list.appendChild(movie);
+
 };
 
