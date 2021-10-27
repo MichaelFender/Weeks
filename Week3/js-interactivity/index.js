@@ -34,3 +34,8 @@ let form = document.querySelector("form");
 
 form.addEventListener("submit", addMovie);
 
+let deleteMovie = (event) => {
+
+    event.target.parentNode.remove()
+}
+
