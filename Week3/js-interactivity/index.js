@@ -15,6 +15,8 @@ let addMovie = (event) => {
     let list = document.querySelector('ul');
 
     list.appendChild(movie);
+
+    inputField.value = '';
 };
 
 let form = document.querySelector("form");
