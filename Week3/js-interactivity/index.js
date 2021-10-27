@@ -10,6 +10,8 @@ let addMovie = (event) => {
 
     movieTitle.textContent = inputField.value;
 
+    movieTitle.addEventListener("click", crossOffMovie);
+
     movie.appendChild(movieTitle);
 
     let deleteBtn = document.createElement("button");
@@ -36,8 +38,8 @@ form.addEventListener("submit", addMovie);
 
 let deleteMovie = (event) => {
 
-    event.target.parentNode.remove()
-}
+    event.target.parentNode.remove();
+};
 
 let crossOffMovie = (event) => {
 
