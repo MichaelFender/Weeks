@@ -138,34 +138,14 @@ axios.get('http://localhost:3000/repeat/WHODAT')
 
 // CODE HERE
 
-const sendQuery = () => {
-    axios.get('http://localhost:3000/query-test').then((res) => {
-        let sendQuery = document.getElementById('query-button');
-        sendQuery.style.display = 'block';
-        sendQuery.style.backgroundColor = 'green';
-        sendQuery.textContent = res.data;
-    })
+const firstQuery = () => {
+    console.log("test");
+    axios.get('http://localhost:3000/query-test?WUT')
+    .then(res => console.log(res.data))
 }
-document.getElementById('query-button').addEventListener('click', sendQuery)
-
-////////////////////////////
-// const test = () => {
-    
-// axios.get('http://localhost:3000/query-test')
-
-// .then(response => {
-//     console.log('RESPONSE', response.data);
-
-//     let queryText = document.getElementById('query-button');
-//     queryText.style.display = 'block';
-//     queryText.style.backgroundColor = 'green';
-//     queryText.textContent = response.data;
-// })
-
-// document.getElementById('query-button').addEventListener('click', test)
-// }
 
 
+document.getElementById('query-button').addEventListener('click', firstQuery)
 
 ////////////////
 //INTERMEDIATE//
@@ -217,3 +197,13 @@ document.getElementById('query-button').addEventListener('click', sendQuery)
 */
 
 // CODE HERE 
+
+const createFood = () => {
+    let foodInput = document.querySelector('input');
+    let body = {
+        newFood: foodInput
+    }
+}
+
+
+
