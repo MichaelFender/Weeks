@@ -1,0 +1,27 @@
+p{
+    color: rgb(149, 1, 95);
+}
+
+#boxybox {
+    position:sticky;
+    top: 0;
+}
+
+div {
+    background-color: teal;
+    border: 3.5px dotted rgb(229, 255, 0) ;
+}
+
+.heading {
+    font-weight: bolder;
+    font-style: italic;
+}
+
+
+.content {
+    color: rgb(141, 0, 160);
+}
+
+#fancy {
+    color: rgb(0, 32, 0);
+}
