@@ -11,6 +11,7 @@
 
 // CODE HERE
 
+let sayHelloButton = document.querySelector('#say-hello-button')
 
 // PROBLEM 2
 /*
@@ -20,7 +21,10 @@
 */
 
 // CODE HERE
-
+sayHelloButton.addEventListener('mouseover', () =>{
+    sayHelloButton.style.backgroundColor = 'black';
+    sayHelloButton.style.color ='white';
+})
 
 // PROBLEM 3
 /*
@@ -32,7 +36,10 @@
 */
 
 // CODE HERE
-
+sayHelloButton.addEventListener('mouseout', () => {
+    sayHelloButton.style.backgroundColor = '#EFEFEF'
+    sayHelloButton.style.color = 'black'
+})
 
 // PROBLEM 4
 /*
@@ -53,7 +60,7 @@ const sayHello = () => {
 // DO NOT EDIT FUNCTION
 
 // CODE HERE
-
+sayHelloButton.addEventListener('click', sayHello)
 
 // PROBLEM 5 
 /*
@@ -68,7 +75,12 @@ const sayHello = () => {
 
 const ohMy = () => {
     // YOUR CODE HERE
-}
+axios.get('http://localhost:3000/animals')
+
+.then(response => {
+    console.log('RESPONSE', response.data);
+})}
+
 
 document.getElementById('animals-button').addEventListener('click', ohMy)
 
@@ -88,7 +100,21 @@ document.getElementById('animals-button').addEventListener('click', ohMy)
 
 const repeatMyParam = () => {
     //YOUR CODE HERE
+axios.get('http://localhost:3000/repeat/WHODAT')
+   
+    .then(response =>{
+        console.log('RESPONSE', response.data);
+
+        let repeatText = document.getElementById('repeat-text');
+        repeatText.style.display = 'block';
+        repeatText.style.backgroundColor = 'green';
+        repeatText.textContent = response.data;
+    })
+     
 }
+
+    document.getElementById('repeat-button').addEventListener('click', repeatMyParam)
+
 
 // PROBLEM 7
 /*
@@ -111,6 +137,33 @@ const repeatMyParam = () => {
 */
 
 // CODE HERE
+
+const sendQuery = () => {
+    axios.get('http://localhost:3000/query-test').then((res) => {
+        let sendQuery = document.getElementById('query-button');
+        sendQuery.style.display = 'block';
+        sendQuery.style.backgroundColor = 'green';
+        sendQuery.textContent = res.data;
+    })
+}
+document.getElementById('query-button').addEventListener('click', sendQuery)
+
+////////////////////////////
+// const test = () => {
+    
+// axios.get('http://localhost:3000/query-test')
+
+// .then(response => {
+//     console.log('RESPONSE', response.data);
+
+//     let queryText = document.getElementById('query-button');
+//     queryText.style.display = 'block';
+//     queryText.style.backgroundColor = 'green';
+//     queryText.textContent = response.data;
+// })
+
+// document.getElementById('query-button').addEventListener('click', test)
+// }
 
 
 
