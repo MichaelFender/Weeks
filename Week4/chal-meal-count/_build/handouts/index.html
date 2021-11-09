@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>Meal Count | Bright Paths - Foundations</title>
+
+      <link
+        href="_static/pygments.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <link href="_static/brightpaths.css" rel="stylesheet" type="text/css" />
+          <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+          <link rel="stylesheet" type="text/css" href="_static/brightpaths.css" />
+          <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
+          <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+
+      <script src="_static/pdfobject.min.js"></script>
+      
+  </head>
+  <body>
+      <div id="handouts-container">
+        <header id="page-header">
+            <p id="project-title">Bright Paths - Foundations</p>
+            <p id="page-title">Meal Count</p>
+              <p id="backlink">
+                <a href="/"> &laquo; Back to Homepage </a>
+              </p>
+        </header>
+
+        <nav id="page-toc"><ul>
+<li><a class="reference internal" href="#">Meal Count</a></li>
+</ul>
+</nav>
+
+        <main id="page-content">
+            <section class="section" id="meal-count">
+<h1>Meal Count</h1>
+<dl class="field-list simple">
+<dt class="field-odd">Difficulty</dt>
+<dd class="field-odd"><p>Medium</p>
+</dd>
+<dt class="field-even">Concepts</dt>
+<dd class="field-even"><p>Objects, Higher Order Methods</p>
+</dd>
+</dl>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>You will be given an array of objects representing data about developers who have signed up to attend the next coding meetup that you are organising.</p>
+<p>Your task is to write a function that returns an object which includes the count of food options selected by the developers on the meetup sign-up form.</p>
+<p>For example, given the following input array:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">list1</span> <span class="o">=</span> <span class="p">[</span>
+<span class="p">{</span> <span class="nx">firstName</span><span class="o">:</span> <span class="s1">&#39;Noah&#39;</span><span class="p">,</span> <span class="nx">lastName</span><span class="o">:</span> <span class="s1">&#39;M.&#39;</span><span class="p">,</span> <span class="nx">country</span><span class="o">:</span> <span class="s1">&#39;Switzerland&#39;</span><span class="p">,</span> <span class="nx">continent</span><span class="o">:</span> <span class="s1">&#39;Europe&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mf">19</span><span class="p">,</span> <span class="nx">language</span><span class="o">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span>
+    <span class="nx">meal</span><span class="o">:</span> <span class="s1">&#39;vegetarian&#39;</span> <span class="p">},</span>
+<span class="p">{</span> <span class="nx">firstName</span><span class="o">:</span> <span class="s1">&#39;Anna&#39;</span><span class="p">,</span> <span class="nx">lastName</span><span class="o">:</span> <span class="s1">&#39;R.&#39;</span><span class="p">,</span> <span class="nx">country</span><span class="o">:</span> <span class="s1">&#39;Liechtenstein&#39;</span><span class="p">,</span> <span class="nx">continent</span><span class="o">:</span> <span class="s1">&#39;Europe&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mf">52</span><span class="p">,</span> <span class="nx">language</span><span class="o">:</span> <span class="s1">&#39;JavaScript&#39;</span><span class="p">,</span>
+    <span class="nx">meal</span><span class="o">:</span> <span class="s1">&#39;standard&#39;</span> <span class="p">},</span>
+<span class="p">{</span> <span class="nx">firstName</span><span class="o">:</span> <span class="s1">&#39;Ramona&#39;</span><span class="p">,</span> <span class="nx">lastName</span><span class="o">:</span> <span class="s1">&#39;R.&#39;</span><span class="p">,</span> <span class="nx">country</span><span class="o">:</span> <span class="s1">&#39;Paraguay&#39;</span><span class="p">,</span> <span class="nx">continent</span><span class="o">:</span> <span class="s1">&#39;Americas&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mf">29</span><span class="p">,</span> <span class="nx">language</span><span class="o">:</span> <span class="s1">&#39;Ruby&#39;</span><span class="p">,</span>
+    <span class="nx">meal</span><span class="o">:</span> <span class="s1">&#39;vegan&#39;</span> <span class="p">},</span>
+<span class="p">{</span> <span class="nx">firstName</span><span class="o">:</span> <span class="s1">&#39;George&#39;</span><span class="p">,</span> <span class="nx">lastName</span><span class="o">:</span> <span class="s1">&#39;B.&#39;</span><span class="p">,</span> <span class="nx">country</span><span class="o">:</span> <span class="s1">&#39;England&#39;</span><span class="p">,</span> <span class="nx">continent</span><span class="o">:</span> <span class="s1">&#39;Europe&#39;</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mf">81</span><span class="p">,</span> <span class="nx">language</span><span class="o">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span>
+    <span class="nx">meal</span><span class="o">:</span> <span class="s1">&#39;vegetarian&#39;</span> <span class="p">},</span>
+<span class="p">];</span>
+</pre></div>
+</div>
+<p>your function should return the following object (the order of properties does not matter):</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="nx">vegetarian</span><span class="o">:</span> <span class="mf">2</span><span class="p">,</span> <span class="nx">standard</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span> <span class="nx">vegan</span><span class="o">:</span> <span class="mf">1</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>The order of the meals count in the object does not matter.</p></li>
+<li><p>The count value should be a valid number.</p></li>
+<li><p>The input array will always be valid and formatted as in the example above.</p></li>
+<li><p>There are 5 possible meal options and the strings representing the selected meal option will always be formatted in the same way, as follows: ‘standard’, ‘vegetarian’, ‘vegan’, ‘diabetic’, ‘gluten-intolerant’.</p></li>
+</ul>
+</section>
+
+        </main>
+
+        <footer id="page-footer">
+            <p>&copy; 2021 Devmountain</p>
+        </footer>
+      </div>
+
+      <script src="_static/main.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+  </body>
+</html>

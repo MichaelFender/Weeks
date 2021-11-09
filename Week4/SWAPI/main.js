@@ -5,8 +5,8 @@ let baseURL = "https://swapi.dev";
 function createStarCard(star) {
     const starCard = document.createElement("h3");
     const starUrl = document.createElement("div");
-    starCard.innerHTML = `${star.name}`;
-    starUrl.innerHTML = `<a href=${star.url}>View ${star.name} data!</a>`;
+    starCard.innerHTML = `${star.data.name}`;
+    starUrl.innerHTML = `<a href=${star.url}>View ${star.data.name} data!</a>`;
 
     starContainer.appendChild(starCard);
     starContainer.appendChild(starUrl);

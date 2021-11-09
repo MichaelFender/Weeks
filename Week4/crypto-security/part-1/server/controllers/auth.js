@@ -1,3 +1,4 @@
+const bcrypt
 const users = []
 
 module.exports = {
