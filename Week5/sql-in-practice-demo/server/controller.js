@@ -72,5 +72,14 @@ module.exports = {
             .then((dbRes) => res.status(200).send(dbRes[0]))
             .catch((err) => console.log(err));
     },
-
+    requestAppointment: (req, res) => {
+        const {date, service} = req.body
+    
+        sequelize.query(`insert into cc_appointments (client_id, date, service_type, notes, approved, completed)
+        values (${clientId}, '${date}', '${service}', '', false, false)
+        returning *;`)
+            .then(dbRes => res.status(200).send(dbRes[0]))
+            .catch(err => console.log(err))
+    }
+    
 };
