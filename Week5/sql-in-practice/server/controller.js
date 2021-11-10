@@ -16,13 +16,11 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 let nextEmp = 5
 
 module.exports = {
-    getPastAppointments: (req, res) => {
-        sequelize.query(`select a.appt_id, a.date, a.service_type, a.approved, a.completed, u.first_name, u.last_name 
+    getUpcomingAppointments: (req, res) => {
+        sequelize.query(`select a.appt_id, a.date, a.service_type, a.notes, u.first_name, u.last_name 
         from cc_appointments a
-        join cc_emp_appts ea on a.appt_id = ea.appt_id
-        join cc_employees e on e.emp_id = ea.emp_id
-        join cc_users u on e.user_id = u.user_id
-        where a.approved = true and a.completed = false
+        join cc_users u on a.client_id = u.user_id
+        WHERE a.approved = true AND a.completed = false
         order by a.date desc;`)
             .then(dbRes => res.status(200).send(dbRes[0]))
             .catch(err => console.log(err))
@@ -61,20 +59,12 @@ module.exports = {
         .query(`SELECT * FROM cc_appointments WHERE approved = false ORDER BY cc_appointments.date`)
         
             .then(dbRes => res.status(200).send(dbRes[0]))
-            .catch(err => console.log(err))
+            .catch(err => console.log('getPendingAppointments error', err))
     },
-    getUpcomingAppointments: (req, res) => {
-        sequelize.query(`select appt_id, appt.date, a.service_type, u.first_name, u.last_name 
-        from cc_appointments a
-        join cc_emp_appts ea on a.appt_id = ea.appt_id
-        join cc_employees e on e.emp_id = ea.emp_id
-        join cc_users u on e.user_id = u.user_id
-        where a.approved = true and a.completed = true
-        order by a.date desc;`)
-
+    getPastAppointments: (req, res) => {
+        sequelize.query(`SELECT * FROM cc_appointments;`)  
         
             .then(dbRes => res.status(200).send(dbRes[0]))
-            .catch(err => console.log(err))
-    }
+            .catch(err => console.log('getPastAppointments error', err))
+    },
 }
-
