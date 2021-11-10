@@ -28,4 +28,49 @@ module.exports = {
             .then((dbRes) => res.status(200).send(dbRes[0]))
             .catch((err) => console.log(err));
     },
+    updateUserInfo: (req, res) => {
+        let {
+            firstName,
+            lastName,
+            phoneNumber,
+            email,
+            address,
+            city,
+            state,
+            zipCode,
+        } = req.body;
+
+        sequelize
+            .query(
+                `update cc_users set 
+        first_name = '${firstName}',
+        last_name = '${lastName}',
+        email = '${email}',
+        phone_number = ${phoneNumber}
+        where user_id = ${userId}; 
+        
+
+        update cc_clients set 
+        address = '${address}',
+        city = '${city}',
+        state = '${state}',
+        zip_code = ${zipCode}
+        where user_id = ${userId};
+        `
+            )
+            .then(() => res.sendStatus(200))
+            .catch((err) => console.log(err));
+    },
+    getUserAppt: (req, res) => {
+        sequelize
+            .query(
+                `
+        SELECT * FROM cc_appointments
+        WHERE client_id = ${clientId}
+        ORDER BY date DESC;`
+            )
+            .then((dbRes) => res.status(200).send(dbRes[0]))
+            .catch((err) => console.log(err));
+    },
+
 };
