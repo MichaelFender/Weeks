@@ -15,3 +15,47 @@ let testData = {
     floor: 5,
     roomNumber: 3
   }
+//just to show basic test
+  test('should run', () => expect(2).toBe(2))
+//to show we can access testData
+  test('first name should be Patten', () => expect(testData.firstName).toBe('Patten'))
+
+  describe('formatTitle tests', () => {
+    //you can test for types
+    test('formatTitle should return a string', () => {
+      let formattedTitle = formatTitle(testData.title)
+      expect(typeof formattedTitle).toBe('string')
+    })
+
+    test('formatTitle should format title correctly', () => {
+      let formattedTitle = formatTitle(testData.title)
+      expect(formattedTitle).toBe('Nulla Ac')
+    })
+
+  })
+
+  describe('shortenBio tests', () => {
+    test('shortenBio should shorten the bio string', () => {
+      let shortBio = shortenBio(testData.bio)
+      expect(shortBio.length).toBeLessThan(testData.bio.length)
+    })
+
+    test('shortenBio should add periods to the end of the string', () => {
+      let shortBio = shortenBio(testData.bio)
+      expect(shortBio).toContain('...')
+    })
+
+  })
+
+  describe('convertLength tests', () => {
+    test('convertLength should return an array with length 2', () => {
+      let result = convertLength(testData.length)
+      expect(result).toHaveLength(2)
+    })
+
+    test('convertLength can handle numbers under 60', () => {
+      let result = convertLength(30)
+      expect(result[1]).toEqual(30)
+    })
+
+  })
