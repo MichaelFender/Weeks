@@ -1,7 +1,7 @@
 // Here in our .test.ts file we want to import some stuff from Selenium-Webdriver
 // We import Builder and Capabilities so we can build a driver that will allow us 
 // to interact with the browser
-const {Builder, Capabilities} = require('selenium-webdriver')
+const {Builder, Capabilities, By} = require('selenium-webdriver')
 
 // And we are also importing a function here that will do a search on Google
 const {search} = require('./src/search')
@@ -26,4 +26,9 @@ afterAll(async () => {
 // We're using async functions because we need to use 'await' when we're dealing with the browser
 test('Google Search Test', async () => {
     await search(driver, 'Tenet')
+    await driver.findElement(By.name('q')).clear()
+    await driver.findElement(By.name('q')).sendKeys('Puppies\n')
+    await driver.findElement(By.xpath('(//a[text()="Images"])[1]')).click()
 })
+
+
