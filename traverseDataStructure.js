@@ -28,6 +28,10 @@ class LinkedList {
         }
         return lastNode
     }
+
+    isEmpty() {
+        return this.size === 0
+    }
 }
 
 let nodeA = new Node('A')
@@ -45,4 +49,5 @@ let list = new LinkedList(nodeA)
 // console.log(list.head.next.data);
 // console.log(list.head.next.next.data);
 // console.log(list.size());
-console.log(list.getLast());
+// console.log(list.getLast());
+// console.log(list.isEmpty());
